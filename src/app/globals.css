@@ -3,13 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-main: var(--font-main);
+  --font-mono: var(--font-mono);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-main);
+  --font-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,28 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-main);
+}
+
+/* Font classes for easy use */
+.font-main {
+  font-family: var(--font-main);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+}
+
+p, span, div {
+  font-family: var(--font-main);
+}
+
+/* If you want to use Times for specific elements */
+blockquote, cite, .italic-text {
+  font-family: var(--font-mono);
 }

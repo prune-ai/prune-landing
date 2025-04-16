@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Example of how to use local fonts - replace these with your actual font files
+const avenir = localFont({
+  src: '../../public/fonts/avenir-next-demi-bold.ttf',
+  variable: '--font-main',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const times = localFont({
+  src: '../../public/fonts/times-new-roman-italic.ttf',
+  variable: '--font-mono',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${avenir.variable} ${times.variable} antialiased`}
       >
         {children}
       </body>
