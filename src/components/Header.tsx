@@ -1,4 +1,5 @@
 "use client";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -48,12 +49,38 @@ const menuItems: MenuItem[] = [
 
 export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
+  const menuItemsRef = useRef<Array<HTMLAnchorElement | HTMLDivElement | null>>(
+    []
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
+  // Animation for menu items on load
+  useEffect(() => {
+    const elements = menuItemsRef.current.filter((el) => el !== null);
+    gsap.fromTo(
+      elements,
+      {
+        y: -20,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (
+        mobileMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
         setMobileMenuOpen(false);
       }
     };
@@ -71,7 +98,7 @@ export default function Header() {
     } else {
       document.body.style.overflow = "auto";
     }
-    
+
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -88,7 +115,7 @@ export default function Header() {
           priority
         />
       </Link>
-      
+
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-7 items-center text-lg font-main text-white">
         {menuItems.map((item, index) => {
@@ -96,10 +123,20 @@ export default function Header() {
             typeof window !== "undefined" &&
             window.location.pathname === item.route;
           return item.hasOwnProperty("children") ? (
-            <Dropdown key={index} item={item} />
+            <div
+              key={index}
+              ref={(el) => {
+                menuItemsRef.current[index] = el;
+              }}
+            >
+              <Dropdown item={item} />
+            </div>
           ) : (
             <Link
               key={index}
+              ref={(el) => {
+                menuItemsRef.current[index] = el;
+              }}
               className={`relative px-8 py-1.5 transition-all duration-200 ease-in-out
               ${isActive ? "text-white" : "text-white hover:text-white"}
               group`}
@@ -126,45 +163,49 @@ export default function Header() {
           </div>
         </a>
       </div>
-      
+
       {/* Mobile Hamburger Button */}
-      <button 
+      <button
         className="md:hidden flex flex-col justify-center items-center w-10 h-10 relative z-50"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label="Toggle menu"
       >
-        <span className={`block w-6 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-        <span className={`block w-6 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        <span
+          className={`block w-6 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${
+            mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+          }`}
+        ></span>
+        <span
+          className={`block w-6 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${
+            mobileMenuOpen ? "opacity-0" : ""
+          }`}
+        ></span>
+        <span
+          className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
+            mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+          }`}
+        ></span>
       </button>
-      
+
       {/* Mobile Slide-in Menu */}
-      <div 
+      <div
         ref={menuRef}
         className={`fixed top-0 right-0 w-4/5 max-w-xs h-full
-           shadow-lg bg-white/50 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-40 ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden overflow-y-auto`}
+           shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
+             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+           } md:hidden overflow-y-auto`}
       >
         <div className="p-6 flex flex-col gap-6">
-          <div className="flex justify-end">
-            <button 
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-white text-xl"
-              aria-label="Close menu"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-          
+          <div className="flex justify-end"></div>
+
           <nav className="flex flex-col gap-5 mt-10">
             {menuItems.map((item, index) => {
               if (item.hasOwnProperty("children")) {
                 return (
                   <div key={index} className="flex flex-col gap-2">
-                    <p className="text-white text-lg font-semibold">{item.title}</p>
+                    <p className="text-white text-lg font-semibold">
+                      {item.title}
+                    </p>
                     <div className="pl-4 flex flex-col gap-3">
                       {item.children?.map((child, childIndex) => (
                         <Link
@@ -180,7 +221,7 @@ export default function Header() {
                   </div>
                 );
               }
-              
+
               return (
                 <Link
                   key={index}
@@ -193,10 +234,14 @@ export default function Header() {
               );
             })}
           </nav>
-          
+
           {/* Mobile CTA Button */}
           <div className="mt-6">
-            <a href="#" className="block w-full" onClick={() => setMobileMenuOpen(false)}>
+            <a
+              href="#"
+              className="block w-full"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <div className="relative group/button w-full">
                 <div className="relative flex items-center justify-center px-6 py-3 text-lg font-main text-white group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg bg-[#357889]">
                   Request Demo
@@ -206,10 +251,10 @@ export default function Header() {
           </div>
         </div>
       </div>
-      
+
       {/* Overlay when mobile menu is open */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0  z-30 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
