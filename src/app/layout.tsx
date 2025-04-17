@@ -18,7 +18,7 @@ const times = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://prune.co'),
   title: {
-    default: "Prune - Automating The Takedowns Lifecycles",
+    default: "Prune - Weaponizing LLMs Against Digital Exploitation",
     template: "%s | Prune"
   },
   description: "Prune automates the takedowns lifecycle, helping businesses protect their brand and intellectual property online. Streamline your takedown process with AI-powered solutions.",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://prune.co",
     siteName: "Prune",
-    title: "Prune - Automating The Takedowns Lifecycles",
+    title: "Prune - Weaponizing LLMs Against Digital Exploitation",
     description: "Prune automates the takedowns lifecycle, helping businesses protect their brand and intellectual property online.",
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prune - Automating The Takedowns Lifecycles",
+    title: "Prune - Weaponizing LLMs Against Digital Exploitation",
     description: "Prune automates the takedowns lifecycle, helping businesses protect their brand and intellectual property online.",
     images: ["/favico.png"],
     creator: "@prune",
