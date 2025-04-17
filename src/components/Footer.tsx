@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (

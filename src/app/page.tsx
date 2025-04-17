@@ -4,8 +4,6 @@ import Lenis from "lenis";
 import HeroSection from "@/components/HeroSection";
 import PruneImage from "@/components/PrueImage";
 import PruneInfo from "@/components/PruneInfo";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 
 export default function Home() {
   useEffect(() => {

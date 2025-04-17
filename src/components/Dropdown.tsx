@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { MenuItem } from "./Header";
 
 interface DropdownProps {
@@ -18,14 +18,13 @@ const descriptions: { [key: string]: string } = {
 };
 
 export default function Dropdown({ item }: DropdownProps) {
-  const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   return (
     <div ref={dropdownRef} className="relative group">
       <div
         className={`relative px-7 py-1.5 transition-all duration-200 ease-in-out rounded-full cursor-pointer
-          ${isOpen ? "text-white " : "text-white hover:text-white"}
+          text-white hover:text-white
           group flex items-center`}
       >
         {item.title}
