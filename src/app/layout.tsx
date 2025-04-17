@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: "Prune automates the takedowns lifecycle, helping businesses protect their brand and intellectual property online.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/favico.png",
         width: 1200,
         height: 630,
         alt: "Prune - Automating The Takedowns Lifecycles",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prune - Automating The Takedowns Lifecycles",
     description: "Prune automates the takedowns lifecycle, helping businesses protect their brand and intellectual property online.",
-    images: ["/images/og-image.jpg"],
+    images: ["/favico.png"],
     creator: "@prune",
   },
   robots: {
