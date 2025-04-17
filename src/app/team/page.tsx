@@ -40,7 +40,7 @@ export default function MeetTheTeam() {
                 src={member.image}
                 alt={member.name}
                 fill
-                className="rounded-full object-cover"
+                className="rounded-full object-cover bg-black/50"
               />
             </div>
             <div className="text-lg font-medium">{member.name}</div>
