@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#18183B] text-white  flex justify-center py-8 px-6 md:px-12 lg:px-20">
+    <footer className="bg-[#18183B] text-white  flex justify-center py-16 px-6 md:px-12 lg:px-20">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row gap-8 justify-between items-start">
           {/* Logo and Social Icons Section */}

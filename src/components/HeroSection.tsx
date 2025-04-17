@@ -42,7 +42,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <div className="w-screen h-[140vh]"> 
+        <div className="w-screen "> 
             {/* <Header/> */}
             
             <Image
@@ -50,14 +50,21 @@ export default function HeroSection() {
                 width={1920}
                 height={1080}
                 alt="prune"
-                className="w-screen h-[140vh]"
+                className="w-screen h-[140vh] hidden lg:block"
             />
+            <Image
+                src="/images/background.png"
+                width={500}
+                height={500}
+                alt="prune"
+                className="w-screen h-screen block lg:hidden"
+                />
             <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <h1 ref={headlineRef} className="text-5xl font-bold text-white">
+                <h1 ref={headlineRef} className="text-xl md:text-5xl font-bold text-white">
                     AI-powered takedowns
                 </h1>
-                <h1 ref={subheadRef} className="mt-4 text-6xl text-center text-white font-mono">
-                    We weaponize LLMs against <br />digital exploitation
+                <h1 ref={subheadRef} className="mt-4 text-3xl  lg:text-6xl text-center text-white font-mono">
+                    We weaponize LLMs against digital exploitation
                 </h1>
             </div>
         </div>
