@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 export default function MeetTheTeam() {
   const team = [
     {
@@ -33,11 +33,9 @@ export default function MeetTheTeam() {
       <div className="flex flex-col md:flex-row  gap-10 max-w-7xl mx-auto">
         {team.map((member, i) => (
           <div key={i} className="flex flex-col  items-center space-y-1">
-            <Image
+            <img
               src={member.image}
               alt={member.name}
-              width={30}
-              height={30}
               className="w-30 h-30 rounded-full object-cover "
             />
             <div className="text-base font-main">{member.name}</div>
@@ -51,3 +49,4 @@ export default function MeetTheTeam() {
     </div>
   );
 }
+

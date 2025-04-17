@@ -223,12 +223,22 @@ export default function Header() {
       <div
         ref={menuRef}
         className={`fixed top-0 right-0 w-full  
-           shadow-lg bg-[#1B1A3C] h-screen transform transition-transform duration-300 ease-in-out z-40 ${
+           shadow-lg bg-[#1B1A3C] h-screen transform transition-transform duration-300 ease-in-out z-50 ${
              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
            } lg:hidden overflow-y-auto`}
       >
         <div className="p-6 bg-[#1B1A3C] flex flex-col gap-6">
-          <div className="flex justify-end"></div>
+          <div className="flex justify-end">
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-white text-xl p-2"
+              aria-label="Close menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
 
           <nav className="flex flex-col gap-5 mt-10">
             {menuItems.map((item, index) => {
@@ -243,7 +253,7 @@ export default function Header() {
                         <Link
                           key={childIndex}
                           href={child.route || ""}
-                          className="text-gray-300 hover:text-white transition-colors"
+                          className="text-gray-300 hover:text-white transition-colors relative z-50"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {child.title}
@@ -258,7 +268,7 @@ export default function Header() {
                 <Link
                   key={index}
                   href={item.route || ""}
-                  className="text-white text-lg font-semibold hover:text-gray-300 transition-colors"
+                  className="text-white text-lg font-semibold hover:text-gray-300 transition-colors relative z-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.title}
@@ -269,9 +279,9 @@ export default function Header() {
 
           {/* Mobile CTA Button */}
           <div className="mt-6">
-            <a
-              href="#"
-              className="block w-full"
+            <Link
+              href="mailto:contact@prune.co"
+              className="block w-full relative z-50"
               onClick={() => setMobileMenuOpen(false)}
             >
               <div className="relative group/button w-full">
@@ -279,7 +289,7 @@ export default function Header() {
                   Request Demo
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -287,7 +297,7 @@ export default function Header() {
       {/* Overlay when mobile menu is open */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0  z-50 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
