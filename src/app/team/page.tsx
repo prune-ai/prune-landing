@@ -17,32 +17,26 @@ export default function MeetTheTeam() {
       name: "Michael Smith",
       title: "Lead Engineer",
       role: "",
-      image: "./images/meet_the_team_linus.jpeg",
+      image: "./images/meet_the_team_michael.jpg",
     },
     {
       name: "Linus Mixson",
       title: "Backend Engineer",
       role: "",
-      image: "./images/meet_the_team_charles.jpg",
-    },
-    {
-      name: "Kayla",
-      title: "Survivor Advocate",
-      role: "",
-      image: "./images/meet_the_team_charles.jpg", // generic placeholder
+      image: "./images/meet_the_team_linus.jpeg",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#2e6f7a] text-white py-16 px-4 text-center font-sans">
+    <div className="min-h-[69vh] bg-[#18183B] text-white flex justify-center items-center flex-col py-16 px-4 text-center font-sans">
       <h2 className="text-4xl italic font-semibold mb-12">Meet the Team</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row  gap-10 max-w-7xl mx-auto">
         {team.map((member, i) => (
-          <div key={i} className="flex flex-col items-center space-y-1">
+          <div key={i} className="flex flex-col  items-center space-y-1">
             <img
               src={member.image}
               alt={member.name}
-              className="w-28 h-28 rounded-full object-cover border-1 border-white"
+              className="w-30 h-30 rounded-full object-cover "
             />
             <div className="text-base font-main">{member.name}</div>
             <div className="text-sm text-gray-200">

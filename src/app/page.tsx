@@ -29,11 +29,11 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden">
-      <Header />
+      
       <HeroSection />
       <PruneInfo />
       <PruneImage />
-      <Footer />
+     
     </main>
   );
 }

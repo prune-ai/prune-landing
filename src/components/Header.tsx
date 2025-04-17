@@ -14,26 +14,26 @@ export interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     title: "Issue",
-    route: "/",
+    route: "https://phoenixpitchdeck.webflow.io/",
   },
   {
     title: "Tools",
     children: [
       {
         title: "PruneGPT",
-        route: "/tools/prune-gpt",
+        route: "/",
       },
       {
         title: "MommyLongLegs",
-        route: "/tools/mommy-long-legs",
+        route: "/",
       },
       {
         title: "Leechi",
-        route: "/tools/leechi",
+        route: "/",
       },
       {
         title: "BonsAI",
-        route: "/tools/bons-ai",
+        route: "/",
       },
     ],
   },
@@ -43,16 +43,45 @@ const menuItems: MenuItem[] = [
   },
   {
     title: "Resources",
-    route: "/resources",
+    route: "https://pruneai.substack.com/",
   },
 ];
 
 export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLHeadingElement>(null);
   const menuItemsRef = useRef<Array<HTMLAnchorElement | HTMLDivElement | null>>(
     []
   );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50 && !isScrolled) {
+        setIsScrolled(true);
+        gsap.to(headerRef.current, {
+          backgroundColor: "rgba(24,24,59,1)",
+          backdropFilter: "blur(10px)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      } else if (scrollPosition <= 50 && isScrolled) {
+        setIsScrolled(false);
+        gsap.to(headerRef.current, {
+          backgroundColor: "transparent",
+          backdropFilter: "none",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScrolled]);
 
   // Animation for menu items on load
   useEffect(() => {
@@ -105,7 +134,10 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="flex w-full px-4 md:px-10  justify-between font-avenir absolute bg-transparent items-center py-4 z-50">
+    <header 
+      ref={headerRef}
+      className="flex w-full px-4 md:px-10 justify-between font-avenir fixed top-0 left-0 items-center py-4 z-40 transition-colors duration-300"
+    >
       <Link href="/" className="relative z-10">
         <Image
           src="/images/logo.png"
@@ -151,7 +183,7 @@ export default function Header() {
 
       {/* Desktop CTA */}
       <div className="hidden md:flex gap-6">
-        <a href="#" className="relative z-10">
+        <a href="mailto:contact@prune.co" className="relative z-10">
           <div className="relative group/button">
             <div className="relative flex items-center px-6 text-lg font-main text-white group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg h-12 bg-[#357889]">
               Request Demo
@@ -190,12 +222,12 @@ export default function Header() {
       {/* Mobile Slide-in Menu */}
       <div
         ref={menuRef}
-        className={`fixed top-0 right-0 w-4/5 max-w-xs h-full
-           shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-0 right-0 w-full  
+           shadow-lg bg-[#1B1A3C] h-screen transform transition-transform duration-300 ease-in-out z-40 ${
              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-           } md:hidden overflow-y-auto`}
+           } lg:hidden overflow-y-auto`}
       >
-        <div className="p-6 flex flex-col gap-6">
+        <div className="p-6 bg-[#1B1A3C] flex flex-col gap-6">
           <div className="flex justify-end"></div>
 
           <nav className="flex flex-col gap-5 mt-10">
@@ -255,7 +287,7 @@ export default function Header() {
       {/* Overlay when mobile menu is open */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0  z-30 md:hidden"
+          className="fixed inset-0  z-50 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}

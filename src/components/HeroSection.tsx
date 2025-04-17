@@ -43,7 +43,6 @@ export default function HeroSection() {
 
     return (
         <div className="w-screen "> 
-            {/* <Header/> */}
             
             <Image
                 src="/images/backgroundfinal.png"
