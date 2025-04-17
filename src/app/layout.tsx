@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${avenir.variable} ${times.variable} antialiased`}>
+      <body className={`${avenir.variable} ${times.variable} antialiased overflow-x-clip`}>
         {children}
       </body>
     </html>

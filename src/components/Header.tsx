@@ -78,7 +78,7 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="flex w-full px-4 md:px-10 justify-between font-avenir absolute bg-transparent items-center py-4 z-50">
+    <header className="flex w-full px-4 md:px-10  justify-between font-avenir absolute bg-transparent items-center py-4 z-50">
       <Link href="/" className="relative z-10">
         <Image
           src="/images/logo.png"
@@ -142,13 +142,21 @@ export default function Header() {
       <div 
         ref={menuRef}
         className={`fixed top-0 right-0 w-4/5 max-w-xs h-full
-           shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
+           shadow-lg bg-white/50 backdrop-blur-sm transform transition-transform duration-300 ease-in-out z-40 ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden overflow-y-auto`}
       >
         <div className="p-6 flex flex-col gap-6">
           <div className="flex justify-end">
-            
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-white text-xl"
+              aria-label="Close menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
           
           <nav className="flex flex-col gap-5 mt-10">
@@ -190,7 +198,7 @@ export default function Header() {
           <div className="mt-6">
             <a href="#" className="block w-full" onClick={() => setMobileMenuOpen(false)}>
               <div className="relative group/button w-full">
-                <div className="relative flex items-center justify-center px-6 py-3 text-lg font-main text-white bg-emerald-300 group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg bg-[#357889]">
+                <div className="relative flex items-center justify-center px-6 py-3 text-lg font-main text-white group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg bg-[#357889]">
                   Request Demo
                 </div>
               </div>

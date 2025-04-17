@@ -3,9 +3,9 @@ export default function PruneImage() {
     return (
         <div className="w-screen relative  bg-[#F3FFE2]">
             <div className="flex flex-col gap-10 items-center justify-center min-h-[80vh] ">
-            <div className="text-4xl lg:text-5xl  text-center  text-black  ">
-                <h1 className="font-mono">Automating The Takedowns Lifecycles</h1>
-                <h1 className="font-mono">with prune</h1>
+            <div className="text-3xl lg:text-5xl  text-center  text-black  ">
+                <h1 className="font-mono">Automating The Takedowns</h1>
+                <h1 className="font-mono"> Lifecycles with prune</h1>
             </div>
             <div>
                 <Image
