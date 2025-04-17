@@ -28,7 +28,7 @@ export default function MeetTheTeam() {
   ];
 
   return (
-    <div className="min-h-[69vh] bg-[#18183B] text-white flex justify-center items-center flex-col py-16 px-4 text-center font-sans">
+    <div className="min-h-screen bg-[#18183B] text-white flex justify-center items-center flex-col py-16 px-4 text-center font-sans">
       <h2 className="text-4xl italic font-semibold mb-12">Meet the Team</h2>
       <div className="flex flex-col md:flex-row  gap-10 max-w-7xl mx-auto">
         {team.map((member, i) => (

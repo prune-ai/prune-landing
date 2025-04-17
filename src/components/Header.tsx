@@ -149,7 +149,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex gap-7 items-center text-lg font-main text-white">
+      <div className="hidden lg:flex gap-7 items-center text-lg font-main text-white">
         {menuItems.map((item, index) => {
           const isActive =
             typeof window !== "undefined" &&
@@ -172,7 +172,8 @@ export default function Header() {
               className={`relative px-8 py-1.5 transition-all duration-200 ease-in-out
               ${isActive ? "text-white" : "text-white hover:text-white"}
               group`}
-              href={item?.route || ""}
+              href={item?.route ||  ""} 
+              target="_blank"
             >
               {item.title}
               <div className="absolute inset-0 rounded-lg bg-[#1B1A3C] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
@@ -182,8 +183,8 @@ export default function Header() {
       </div>
 
       {/* Desktop CTA */}
-      <div className="hidden md:flex gap-6">
-        <a href="mailto:contact@prune.co" className="relative z-10">
+      <div className="hidden lg:flex gap-6">
+        <a href="mailto:contact@prune.co" target="_blank" className="relative z-10">
           <div className="relative group/button">
             <div className="relative flex items-center px-6 text-lg font-main text-white group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg h-12 bg-[#357889]">
               Request Demo
@@ -198,7 +199,7 @@ export default function Header() {
 
       {/* Mobile Hamburger Button */}
       <button
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 relative z-50"
+        className="lg:hidden flex flex-col justify-center items-center w-10 h-10 relative z-50"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label="Toggle menu"
       >
