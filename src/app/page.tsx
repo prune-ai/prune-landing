@@ -1,10 +1,11 @@
-'use client';
-import { useEffect } from 'react';
-import Lenis from 'lenis';
+"use client";
+import { useEffect } from "react";
+import Lenis from "lenis";
 import HeroSection from "@/components/HeroSection";
 import PruneImage from "@/components/PrueImage";
 import PruneInfo from "@/components/PruneInfo";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   useEffect(() => {
@@ -27,11 +28,12 @@ export default function Home() {
   }, []);
 
   return (
-   <main className="overflow-x-hidden">
-    <HeroSection/>
-    <PruneInfo/>
-    <PruneImage/>
-    <Footer/>
-   </main>
+    <main className="overflow-x-hidden">
+      <Header />
+      <HeroSection />
+      <PruneInfo />
+      <PruneImage />
+      <Footer />
+    </main>
   );
 }

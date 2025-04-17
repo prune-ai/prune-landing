@@ -1,10 +1,24 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/fonts/avenir-next-demi-bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --font-main: var(--font-main);
   --font-mono: var(--font-mono);
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 45, 40, 72;
+  --background-end-rgb: 45, 40, 72;
 }
 
 @theme inline {
@@ -22,8 +36,13 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
   font-family: var(--font-main);
 }
 
@@ -36,16 +55,34 @@ body {
   font-family: var(--font-mono);
 }
 
+.font-avenir {
+  font-family: "Avenir Next", sans-serif;
+}
+
 /* Typography styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-main);
 }
 
-p, span, div {
+p,
+span,
+div {
   font-family: var(--font-main);
 }
 
 /* If you want to use Times for specific elements */
-blockquote, cite, .italic-text {
+blockquote,
+cite,
+.italic-text {
   font-family: var(--font-mono);
+}
+
+/* Add smooth transitions for dropdown interactions */
+.dropdown-transition {
+  transition: all 0.2s ease-in-out;
 }

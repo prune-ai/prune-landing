@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import "./globals.css";
 
 // Example of how to use local fonts - replace these with your actual font files
 const avenir = localFont({
-  src: '../../public/fonts/avenir-next-demi-bold.ttf',
-  variable: '--font-main',
+  src: "../../public/fonts/avenir-next-demi-bold.ttf",
+  variable: "--font-main",
 });
 
 const times = localFont({
-  src: '../../public/fonts/times-new-roman-italic.ttf',
-  variable: '--font-mono',
+  src: "../../public/fonts/times-new-roman-italic.ttf",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -24,10 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${avenir.variable} ${times.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${avenir.variable} ${times.variable} antialiased`}>
         {children}
       </body>
     </html>
