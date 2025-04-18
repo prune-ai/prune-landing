@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Prune",
   },
   description:
-    "Prune automates the takedowns lifecycle, helping businesses protect their brand and intellectual property online. Streamline your takedown process with AI-powered solutions.",
+    "AI-powered takedowns for the worst corners of the Internet.",
   keywords: [
     "takedown automation",
     "brand protection",
