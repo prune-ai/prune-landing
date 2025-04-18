@@ -12,7 +12,7 @@ export default function MeetTheTeam() {
       name: "Justine J. Li",
       title: "Founder",
       role: "Product",
-      image: "/images/meet_the_team_justine.jpg",
+      image: "/images/meet_the_team_justine.webp",
     },
     {
       name: "Michael Smith",
@@ -35,12 +35,12 @@ export default function MeetTheTeam() {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl w-full">
         {team.map((member, i) => (
           <div key={i} className="flex flex-col items-center space-y-3">
-            <div className="w-32 h-32 relative">
+            <div className="h-[10vmax] aspect-[1/1]  relative ">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
-                className="rounded-full object-cover bg-black/50"
+                className="rounded-full w-full h-full object-cover bg-black/50"
               />
             </div>
             <div className="text-lg font-medium">{member.name}</div>
