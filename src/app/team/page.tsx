@@ -9,7 +9,7 @@ export default function MeetTheTeam() {
     },
     {
       name: "Justine J. Li",
-      role: "Product",
+      role: "CEO",
       image: "/images/meet_the_team_justine.webp",
     },
     {
@@ -19,7 +19,7 @@ export default function MeetTheTeam() {
     },
     {
       name: "Linus Mixson",
-      role: "Chief Engineer",
+      role: "Chief Architect",
       image: "/images/meet_the_team_linus.jpeg",
     },
   ];
