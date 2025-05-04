@@ -173,7 +173,6 @@ export default function Header() {
             ${isActive ? "text-white" : "text-white hover:text-white"}
             group`}
               href={item?.route || ""}
-              target="_blank"  // <--- remove this line or make it conditional
             >
               {item.title}
               <div className="absolute inset-0 rounded-lg bg-[#1B1A3C] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
