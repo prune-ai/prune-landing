@@ -16,13 +16,13 @@ const PruneInfo = () => {
         {/* Right Column */}
         <div className="flex-1">
           <p className="text-lg lg:text-lg font-main mb-6">Since starting our work in 2023, we have:</p>
-          
+
           <div className="mb-8">
             <h2 className="lg:text-2xl font-bold uppercase tracking-wide">Stopped Proliferation</h2>
-            <p className="lg:text-5xl text-teal-400 font-semibold my-2">300,000</p>
+            <p className="lg:text-5xl text-teal-400 font-semibold my-2">500,000</p>
             <p className="lg:text-xl text-gray-300">takedowns processed</p>
           </div>
-          
+
           <div>
             <h2 className="lg:text-2xl font-bold uppercase tracking-wide">Accelerated Survivor Relief</h2>
             <p className="lg:text-5xl text-teal-400 font-semibold my-2">97%</p>

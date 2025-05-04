@@ -4,26 +4,22 @@ export default function MeetTheTeam() {
   const team = [
     {
       name: "Charles DeBarber",
-      title: "Founder",
       role: "Director of Operations",
       image: "/images/meet_the_team_charles.jpg",
     },
     {
       name: "Justine J. Li",
-      title: "Founder",
       role: "Product",
       image: "/images/meet_the_team_justine.webp",
     },
     {
       name: "Michael Smith",
-      title: "Lead Engineer",
-      role: "",
+      role: "Leader Engineer",
       image: "/images/meet_the_team_michael.jpg",
     },
     {
       name: "Linus Mixson",
-      title: "Backend Engineer",
-      role: "",
+      role: "Chief Engineer",
       image: "/images/meet_the_team_linus.jpeg",
     },
   ];

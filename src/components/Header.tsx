@@ -134,7 +134,7 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header 
+    <header
       ref={headerRef}
       className="flex w-full px-4 md:px-10 justify-between font-avenir fixed top-0 left-0 items-center py-4 z-40 transition-colors duration-300"
     >
@@ -170,10 +170,10 @@ export default function Header() {
                 menuItemsRef.current[index] = el;
               }}
               className={`relative px-8 py-1.5 transition-all duration-200 ease-in-out
-              ${isActive ? "text-white" : "text-white hover:text-white"}
-              group`}
-              href={item?.route ||  ""} 
-              target="_blank"
+            ${isActive ? "text-white" : "text-white hover:text-white"}
+            group`}
+              href={item?.route || ""}
+              target="_blank"  // <--- remove this line or make it conditional
             >
               {item.title}
               <div className="absolute inset-0 rounded-lg bg-[#1B1A3C] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
@@ -204,19 +204,16 @@ export default function Header() {
         aria-label="Toggle menu"
       >
         <span
-          className={`block w-6 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${
-            mobileMenuOpen ? "rotate-45 translate-y-2" : ""
-          }`}
+          className={`block w-6 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${
-            mobileMenuOpen ? "opacity-0" : ""
-          }`}
+          className={`block w-6 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${mobileMenuOpen ? "opacity-0" : ""
+            }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
-            mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-          }`}
+          className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
         ></span>
       </button>
 
@@ -224,19 +221,18 @@ export default function Header() {
       <div
         ref={menuRef}
         className={`fixed top-0 right-0 w-full  
-           shadow-lg bg-[#1B1A3C] h-screen transform transition-transform duration-300 ease-in-out z-50 ${
-             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-           } lg:hidden overflow-y-auto`}
+           shadow-lg bg-[#1B1A3C] h-screen transform transition-transform duration-300 ease-in-out z-50 ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          } lg:hidden overflow-y-auto`}
       >
         <div className="p-6 bg-[#1B1A3C] flex flex-col gap-6">
           <div className="flex justify-end">
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(false)}
               className="text-white text-xl p-2"
               aria-label="Close menu"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
