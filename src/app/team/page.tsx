@@ -14,7 +14,7 @@ export default function MeetTheTeam() {
     },
     {
       name: "Michael Smith",
-      role: "Leader Engineer",
+      role: "Lead Engineer",
       image: "/images/meet_the_team_michael.jpg",
     },
     {
