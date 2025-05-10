@@ -2,26 +2,25 @@ import Image from "next/image";
 
 export default function MeetTheTeam() {
   const team = [
- 
     {
       name: "Justine J. Li",
       role: "CEO",
       image: "/images/meet_the_team_justine.webp",
     },
     {
-      name: "Charles DeBarber",
+      name: "Linus Mixson",
       role: "CTO",
+      image: "/images/LINUS.jpeg",
+    },
+    {
+      name: "Charles DeBarber",
+      role: "Chief Intelligence Officer",
       image: "/images/meet_the_team_charles.jpg",
     },
     {
       name: "Michael Smith",
       role: "Lead Engineer",
       image: "/images/meet_the_team_michael.jpg",
-    },
-    {
-      name: "Linus Mixson",
-      role: "Chief Architect",
-      image: "/images/meet_the_team_linus.jpeg",
     },
   ];
 
@@ -43,6 +42,7 @@ export default function MeetTheTeam() {
             </div>
             <div className="text-lg font-medium">{member.name}</div>
             <div className="text-sm text-gray-300">
+              
               {member.role && <div>{member.role}</div>}
             </div>
           </div>
