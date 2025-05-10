@@ -2,15 +2,16 @@ import Image from "next/image";
 
 export default function MeetTheTeam() {
   const team = [
-    {
-      name: "Charles DeBarber",
-      role: "Director of Operations",
-      image: "/images/meet_the_team_charles.jpg",
-    },
+ 
     {
       name: "Justine J. Li",
       role: "CEO",
       image: "/images/meet_the_team_justine.webp",
+    },
+    {
+      name: "Charles DeBarber",
+      role: "CTO",
+      image: "/images/meet_the_team_charles.jpg",
     },
     {
       name: "Michael Smith",
@@ -36,6 +37,7 @@ export default function MeetTheTeam() {
                 src={member.image}
                 alt={member.name}
                 fill
+                loading="lazy"
                 className="rounded-full w-full h-full object-cover bg-black/50"
               />
             </div>

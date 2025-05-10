@@ -45,14 +45,14 @@ export default function HeroSection() {
         <div className="w-screen "> 
             
             <Image
-                src="/images/backgroundfinal.png"
+                src="/images/hero.jpg"
                 width={1920}
                 height={1080}
                 alt="prune"
-                className="w-screen h-[140vh] hidden lg:block"
+                className="w-screen h-[1358px] hidden lg:block"
             />
             <Image
-                src="/images/background.png"
+                src="/images/mobile.svg"
                 width={500}
                 height={500}
                 alt="prune"
