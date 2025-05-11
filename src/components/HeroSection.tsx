@@ -36,7 +36,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <div className="w-screen"> 
+        <div className="w-screen h-full lg:h-[1039px]"> 
             <video
                 src={"/background hero.mp4"}
                 autoPlay
