@@ -36,10 +36,11 @@ export default function HeroSection() {
         ScrollTrigger.create({
             trigger: pinRef.current,
             start: "top top",
-            end: "+=1000", // Adjust to control pin duration
             pin: true,
-            scrub: true,
+            pinSpacing: true,
             anticipatePin: 1,
+            endTrigger: "html",
+            end: "bottom top"
         });
 
         return () => {
@@ -48,42 +49,41 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <div  className="relative w-screen h-screen lg:h-[1039px] overflow-hidden">
+        <div className="relative w-screen h-screen lg:h-[1039px] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(24,24,57,0.5)] to-[#181839] z-10 pointer-events-none" />
 
-            <div  ref={pinRef}>
-            <video
-           
-           src="/background hero.mp4"
-           autoPlay
-           loop
-           playsInline
-           muted
-           preload="auto"
-           className="w-full h-full object-cover hidden lg:block"
-           poster="/images/hero.jpg"
-       />
-           <Image
-                src="/images/mobile.svg"
-                width={500}
-                height={500}
-                alt="prune"
-                className="w-full h-full block lg:hidden"
-            />
-
+            <div ref={pinRef}>
+                <video
+                    src="/background hero.mp4"
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                    preload="true"
+                
+                    className="w-full h-screen object-cover hidden lg:flex"
+                    // poster="/images/hero.jpg"
+                />
+                <Image
+                    src="/images/mobilefinal.png"
+                    width={500}
+                    height={500}
+                    alt="prune"
+                    className="w-full h-screen lg:hidden"
+                    
+                    loading="lazy"
+                />
             </div>
-          
 
-        
             <div className="absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                <h1 ref={headlineRef} className="text-2xl md:text-3xl lg:text-5xl font-bold text-white">
+                <h1 ref={headlineRef} className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
                     AI-powered takedowns
                 </h1>
                 <div ref={subheadRef}>
-                    <h1 className="mt-4 text-3xl w-full lg:text-6xl text-center text-white font-mono">
+                    <h1 className="mt-4 text-4xl w-full lg:text-6xl text-center text-white font-mono">
                         We weaponize LLMs against 
                     </h1>
-                    <h1 className="text-3xl w-full lg:text-6xl text-center text-white font-mono">
+                    <h1 className="text-3xl md:text-4xl w-full lg:text-6xl text-center text-white font-mono">
                         digital exploitation
                     </h1>
                 </div>

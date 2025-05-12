@@ -21,19 +21,23 @@ const menuItems: MenuItem[] = [
     children: [
       {
         title: "PruneGPT",
-        route: "/",
+        route: "/coming-soon",
       },
       {
         title: "MommyLongLegs",
-        route: "/",
+        route: "/coming-soon ",
       },
       {
         title: "Leechi",
-        route: "/",
+        route: "/coming-soon",
       },
       {
         title: "BonsAI",
-        route: "/",
+        route: "/coming-soon",
+      },
+      {
+        title: "Trellis",
+        route: "/coming-soon",
       },
       
     ],
@@ -84,24 +88,24 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScrolled]);
 
-  // Animation for menu items on load
-  useEffect(() => {
-    const elements = menuItemsRef.current.filter((el) => el !== null);
-    gsap.fromTo(
-      elements,
-      {
-        y: -20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "power3.out",
-      }
-    );
-  }, []);
+  // // Animation for menu items on load
+  // useEffect(() => {
+  //   const elements = menuItemsRef.current.filter((el) => el !== null);
+  //   gsap.fromTo(
+  //     elements,
+  //     {
+  //       y: -20,
+  //       opacity: 0,
+  //     },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 0.5,
+  //       stagger: 0.1,
+  //       ease: "power3.out",
+  //     }
+  //   );
+  // }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -176,7 +180,7 @@ export default function Header() {
               href={item?.route || ""}
             >
               {item.title}
-              <div className="absolute inset-0 rounded-lg bg-[#1B1A3C] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
+              <div className="absolute inset-0 rounded-lg bg-[#2D2968] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
             </Link>
           );
         })}
