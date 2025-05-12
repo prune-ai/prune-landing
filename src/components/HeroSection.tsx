@@ -1,76 +1,92 @@
 'use client';
 import Image from "next/image";
-// import Header from "./Header";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
     const headlineRef = useRef<HTMLHeadingElement>(null);
-    const subheadRef = useRef<HTMLHeadingElement>(null);
+    const subheadRef = useRef<HTMLDivElement>(null);
+    const pinRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Set initial states
+        // Animate text in
         gsap.set([headlineRef.current, subheadRef.current], {
             opacity: 0,
             y: 20
         });
 
-        // Create timeline
         const tl = gsap.timeline();
 
-        // Animate headline
         tl.to(headlineRef.current, {
             opacity: 1,
             y: 0,
             duration: 0.8,
             ease: "power2.out"
-        })
-        // Animate subhead with a slight delay
-        .to(subheadRef.current, {
+        }).to(subheadRef.current, {
             opacity: 1,
             y: 0,
             duration: 0.8,
             ease: "power2.out"
-        }, "-=0.4"); // Start slightly before the previous animation ends
+        }, "-=0.4");
 
+        // Pin the hero section
+        ScrollTrigger.create({
+            trigger: pinRef.current,
+            start: "top top",
+            end: "+=1000", // Adjust to control pin duration
+            pin: true,
+            scrub: true,
+            anticipatePin: 1,
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
     }, []);
 
     return (
-        <div className="w-screen h-full lg:h-[1039px]"> 
+        <div  className="relative w-screen h-screen lg:h-[1039px] overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(24,24,57,0.5)] to-[#181839] z-10 pointer-events-none" />
+
+            <div  ref={pinRef}>
             <video
-                src={"/background hero.mp4"}
-                autoPlay
-                loop
-                playsInline
-                muted
-                preload="auto"
-                className="w-screen h-full hidden lg:block"
-                poster="/images/hero.jpg"
-                style={{ objectFit: 'cover' }}
-            >
-                <source src="/background hero.mp4" type="video/mp4" />
-            </video>
-            
-            <Image
+           
+           src="/background hero.mp4"
+           autoPlay
+           loop
+           playsInline
+           muted
+           preload="auto"
+           className="w-full h-full object-cover hidden lg:block"
+           poster="/images/hero.jpg"
+       />
+           <Image
                 src="/images/mobile.svg"
                 width={500}
                 height={500}
                 alt="prune"
                 className="w-full h-full block lg:hidden"
             />
-            <div className="absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+
+            </div>
+          
+
+        
+            <div className="absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
                 <h1 ref={headlineRef} className="text-2xl md:text-3xl lg:text-5xl font-bold text-white">
                     AI-powered takedowns
                 </h1>
-                <div ref= {subheadRef}>
-                <h1  className="mt-4 text-3xl w-full lg:text-6xl text-center text-white font-mono">
-                    We weaponize LLMs against 
-                </h1>
-                <h1  className="text-3xl w-full lg:text-6xl text-center text-white font-mono">
-                    digital exploitation
-                </h1>
+                <div ref={subheadRef}>
+                    <h1 className="mt-4 text-3xl w-full lg:text-6xl text-center text-white font-mono">
+                        We weaponize LLMs against 
+                    </h1>
+                    <h1 className="text-3xl w-full lg:text-6xl text-center text-white font-mono">
+                        digital exploitation
+                    </h1>
                 </div>
-            
             </div>
         </div>
     );

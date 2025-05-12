@@ -15,6 +15,7 @@ const descriptions: { [key: string]: string } = {
     "Scraper that continuously monitors targeted shadow sites for critical metadata",
   BonsAI:
     "Scraper that continuously monitors targeted shadow sites for critical metadata",
+
 };
 
 export default function Dropdown({ item }: DropdownProps) {
@@ -23,7 +24,7 @@ export default function Dropdown({ item }: DropdownProps) {
   return (
     <div ref={dropdownRef} className="relative group">
       <div
-        className={`relative px-7 py-1.5 transition-all duration-200 ease-in-out rounded-full cursor-pointer
+        className={`relative px-7 py-1.5 transition-all duration-500 ease-in-out rounded-full cursor-pointer
           text-white hover:text-white
           group flex items-center`}
       >
@@ -35,16 +36,19 @@ export default function Dropdown({ item }: DropdownProps) {
       <div className="absolute -inset-x-4 h-8 top-full bg-transparent"></div>
 
       <div
-        className={`absolute left-0 mt-2 w-[800px] px-7 py-5 rounded-xl bg-[#7a64ce]  shadow-xl transition-all duration-200 ease-in-out opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto`}
+        className={`absolute left-0 mt-5 w-[800px] px-7 py-5 rounded-xl bg-[#7a64ce]  shadow-xl transition-all duration-400 ease-in-out opacity-0 translate-y-4 pointer-events-none font-inter  group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto`}
       >
         <div className="flex gap-5">
           <div>
-            <ul className="flex flex-col gap-5 py-4 text-nowrap">
+            <ul className="flex flex-col gap-4 py-3 text-[#f9f9f9] text-[18px] text-nowrap">
               <li>For victims</li>
-              <li>For content creators</li>
               <li>For law enforcement</li>
               <li>For policymakers</li>
               <li>For NGOs</li>
+              <li>For legal professionals</li>
+              <li>For DMCA enforcers</li>
+              <li>For trust and safety</li>
+
             </ul>
           </div>
           <div className="w-[.5px] block bg-white/20"></div>
@@ -55,9 +59,9 @@ export default function Dropdown({ item }: DropdownProps) {
                 href={child.route || ""}
                 className="block px-6 py-4 hover:bg-[#503FA9] rounded-2xl transition-colors"
               >
-                <div className="text-white font-medium">{child.title}</div>
+                <div className="text-white font-normal font-inter">{child.title}</div>
                 {descriptions[child.title] && (
-                  <div className="text-[#A093E3] text-md mt-1">
+                  <div className="text-[#f9f9f9]/40 font-inter font-normal text-md ">
                     {descriptions[child.title]}
                   </div>
                 )}

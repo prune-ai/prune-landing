@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const PruneInfo = () => {
   return (
-    <div className="flex items-center justify-center min-h-[80vh] bg-[#18183B] t p-4">
+    <div className="flex items-center justify-center z-auto min-h-[80vh] bg-[#18183B]  p-4">
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12">
         {/* Left Column */}
         <motion.div 
@@ -20,7 +20,7 @@ const PruneInfo = () => {
         </motion.div>
 
         {/* Right Column */}
-        <motion.div 
+        <div 
           className="flex-1"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const PruneInfo = () => {
             <p className="lg:text-5xl text-teal-400 font-semibold my-2">97%</p>
             <p className="lg:text-xl text-gray-300">faster content removal using automated tools</p>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
