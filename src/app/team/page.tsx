@@ -36,7 +36,7 @@ export default function MeetTheTeam() {
                 src={member.image}
                 alt={member.name}
                 fill
-                loading="lazy"
+        
                 className="rounded-full w-full h-full object-cover bg-black/50"
               />
             </div>

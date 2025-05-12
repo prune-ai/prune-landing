@@ -14,7 +14,7 @@ export interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     title: "Issue",
-    route: "https://phoenixpitchdeck.webflow.io/",
+    route: "/issue",
   },
   {
     title: "Tools",
@@ -35,6 +35,7 @@ const menuItems: MenuItem[] = [
         title: "BonsAI",
         route: "/",
       },
+      
     ],
   },
   {
@@ -169,7 +170,7 @@ export default function Header() {
               ref={(el) => {
                 menuItemsRef.current[index] = el;
               }}
-              className={`relative px-8 py-1.5 transition-all duration-200 ease-in-out
+              className={`relative px-8 py-1.5 transition-all duration-500 ease-in-out
             ${isActive ? "text-white" : "text-white hover:text-white"}
             group`}
               href={item?.route || ""}
@@ -183,13 +184,13 @@ export default function Header() {
 
       {/* Desktop CTA */}
       <div className="hidden lg:flex gap-6">
-        <a href="mailto:contact@prune.co" target="_blank" className="relative z-10">
+        <a href="mailto:contact@prune.co" target="_blank" className="relative z-10 transform transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]">
           <div className="relative group/button">
-            <div className="relative flex items-center px-6 text-lg font-main text-white group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg h-12 bg-[#357889]">
+            <div className="relative flex items-center px-6 text-lg font-main text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
               Request Demo
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 opacity-0 group-hover/button:opacity-100 transition-opacity duration-500 rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.1),65%,transparent)]"
+                className="pointer-events-none absolute inset-0 opacity-0 group-hover/button:opacity-100 transition-all duration-500 rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.1),65%,transparent)] animate-shimmer"
               ></div>
             </div>
           </div>
