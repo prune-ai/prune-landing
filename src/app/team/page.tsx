@@ -80,7 +80,6 @@ export default function MeetTheTeam() {
             </div>
             <div className="text-lg font-medium">{member.name}</div>
             <div className="text-sm text-gray-300">
-              {member.title && <div>{member.title}</div>}
               {member.role && <div>{member.role}</div>}
             </div>
           </div>
