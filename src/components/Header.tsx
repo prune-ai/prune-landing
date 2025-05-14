@@ -154,7 +154,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex gap-7 items-center text-lg font-main text-white">
+      <div className="hidden lg:flex gap-7 items-center text-[16px] font-inter font-semibold text-white">
         {menuItems.map((item, index) => {
           const isActive =
             typeof window !== "undefined" &&
@@ -190,7 +190,7 @@ export default function Header() {
       <div className="hidden lg:flex gap-6">
         <a href="mailto:contact@prune.co" target="_blank" className="relative z-10 transform transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]">
           <div className="relative group/button">
-            <div className="relative flex items-center px-6 text-lg font-main text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
+            <div className="relative flex items-center px-6 text-[16px] font-inter font-semibold text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
               Request Demo
               <div
                 aria-hidden="true"

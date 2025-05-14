@@ -45,7 +45,7 @@ export const Footer = () => {
 
           <a href="mailto:contact@prune.co" target="_blank" className="relative z-10 transform transition-transform duration-300  hover:scale-[1.02] active:scale-[0.98]">
             <div className="relative group/button">
-              <div className="relative flex items-center px-[24px]  text-lg font-main text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
+              <div className="relative flex items-center px-[24px] w-full  text-[16px] font-main text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
                 Request Demo
                 <div
                   aria-hidden="true"
@@ -57,13 +57,13 @@ export const Footer = () => {
         </div>
 
         {/* Footer links section */}
-        <div className="flex flex-col lg:flex-row items-start mt-[140px] justify-between w-full md:p-8 gap-8">
+        <div className="flex flex-col lg:flex-row items-start mt-[80px] md:mt-[140px]  justify-between w-full md:p-4 gap-8">
           {/* Company info */}
           <div className="w-full md:w-[365px]">
             <div className="flex flex-col items-start gap-4 w-full">
               <Link href="/" className="block">
                 <Image
-                  className="w-[170px] h-[61px] object-cover"
+                  className="w-[140px] h-[51px] md:w-[170px] md:h-[61px] object-cover"
                   alt="Prune LOGO WHITE"
                   src="/images/logo.png"
                   width={170}
@@ -71,10 +71,9 @@ export const Footer = () => {
                 />
               </Link>
 
-              <p className="text-[#ECF2ED] text-base ml-1.5 font-inter leading-[22px]">
-                <span className="block mb-4">
-                  From the shadows of the internet, we bring clarity,
-                  control, and consent. Prune is building tools to take
+              <p className="text-[#ECF2ED] text-[16px] ml-1.5 font-inter leading-[22px]">
+                <span className="block text-wrap mb-4">
+                  From the shadows of the internet, we bring clarity and consent. Prune is building tools to take
                   harmful content down for good.
                 </span>
                 <span className="font-mono italic">

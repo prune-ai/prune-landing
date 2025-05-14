@@ -10,12 +10,18 @@ export default function HeroSection() {
     const headlineRef = useRef<HTMLHeadingElement>(null);
     const subheadRef = useRef<HTMLDivElement>(null);
     const pinRef = useRef<HTMLDivElement>(null);
+    const gradientRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         // Animate text in
         gsap.set([headlineRef.current, subheadRef.current], {
             opacity: 0,
             y: 20
+        });
+
+        // Initially hide the gradient
+        gsap.set(gradientRef.current, {
+            opacity: 0
         });
 
         const tl = gsap.timeline();
@@ -43,6 +49,20 @@ export default function HeroSection() {
             end: "bottom top"
         });
 
+        // Animate gradient on scroll - this should start after some scroll
+        ScrollTrigger.create({
+            trigger: document.body,
+            start: "top top",
+            end: "+=100vh", // End after 100vh of scrolling
+            onUpdate: (self) => {
+                // Start showing gradient after 20% scroll progress
+                const progress = Math.max(0, (self.progress - 0.2) / 0.8);
+                gsap.set(gradientRef.current, {
+                    opacity: Math.min(1, progress) // Ensure opacity never exceeds 1
+                });
+            }
+        });
+
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
@@ -50,7 +70,10 @@ export default function HeroSection() {
 
     return (
         <div className="relative w-screen h-screen lg:h-[1039px] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(24,24,57,0.5)] to-[#181839] z-10 pointer-events-none" />
+            <div 
+                ref={gradientRef}
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(24,24,57,0.5)] to-[#181839] z-10 pointer-events-none" 
+            />
 
             <div ref={pinRef}>
                 <video
@@ -60,9 +83,7 @@ export default function HeroSection() {
                     playsInline
                     muted
                     preload="true"
-                
                     className="w-full h-screen object-cover hidden lg:flex"
-                    // poster="/images/hero.jpg"
                 />
                 <Image
                     src="/images/mobilefinal.png"
@@ -70,12 +91,11 @@ export default function HeroSection() {
                     height={500}
                     alt="prune"
                     className="w-full h-screen lg:hidden"
-                    
                     loading="lazy"
                 />
             </div>
 
-            <div className="absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="absolute w-full text-center top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
                 <h1 ref={headlineRef} className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
                     AI-powered takedowns
                 </h1>
