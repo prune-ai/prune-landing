@@ -154,7 +154,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex gap-7 items-center text-[16px] font-inter font-semibold text-white">
+      <div className="hidden lg:flex gap-7 items-center text-[16px] font-inter font-medium text-white">
         {menuItems.map((item, index) => {
           const isActive =
             typeof window !== "undefined" &&

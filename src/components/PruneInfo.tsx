@@ -5,7 +5,7 @@ const PruneInfo = () => {
   return (
     <section className="flex items-center justify-center min-h-screen bg-[#18183B] p-4 relative z-30">
       <motion.div 
-        className="max-w-6xl w-full flex flex-col md:flex-row gap-12"
+        className="max-w-6xl w-full flex flex-col md:flex-row gap-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -18,7 +18,7 @@ const PruneInfo = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="text-3xl md:text-4xl text-white font-mono italic mb-8">What is Prune?</h1>
-          <p className="text-sm md:text-xl text-white font-thin leading-relaxed">
+          <p className="text-[16px] font-inter   lg:text-[20px] text-white font-medium leading-relaxed">
             Prune uses large language models to detect, classify, and remove non-consensual and illegal content from the internet. We automate every stage of the takedown lifecycle—from discovery to documentation to takedown request delivery—at scale.
           </p>
         </motion.div>

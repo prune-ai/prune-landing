@@ -18,7 +18,7 @@ const descriptions: { [key: string]: string } = {
 export default function Dropdown({ item }: DropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
+  const [isRightAligned, setIsRightAligned] = useState(false);
 
   useEffect(() => {
     const adjustDropdownPosition = () => {
@@ -29,19 +29,12 @@ export default function Dropdown({ item }: DropdownProps) {
       const parentRect = container.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
       const dropdownWidth = 773;
-      const rightMargin = 24; // 24px margin from the right edge
-
-      // Calculate the left position of the dropdown relative to the viewport
-      const dropdownLeft = parentRect.left;
-      // Calculate how much the dropdown would overflow, including the margin
-      const overflow = dropdownLeft + dropdownWidth + rightMargin - viewportWidth;
       
-      // If there's overflow, set the offset to move it left
-      if (overflow > 0) {
-        setOffset(overflow);
-      } else {
-        setOffset(0);
-      }
+      // Calculate if dropdown would overflow
+      const overflow = parentRect.left + dropdownWidth - viewportWidth;
+      
+      // Switch to right alignment if overflow detected
+      setIsRightAligned(overflow > 0);
     };
 
     adjustDropdownPosition();
@@ -65,14 +58,12 @@ export default function Dropdown({ item }: DropdownProps) {
 
       <div
         ref={dropdownRef}
-        style={{
-          transform: `translateX(-${offset}px)`
-        }}
-        className={`absolute left-0 mt-5 w-[773px] h-[464px] px-[32px] py-[32px] rounded-[12px] bg-[#7964CC] shadow-xl
+        className={`absolute mt-5 max-w-[740px] h-[464px] px-[32px] py-[32px] rounded-[12px] bg-[#7964CC] shadow-xl
         transition-all duration-400 ease-in-out opacity-0 translate-y-4 pointer-events-none font-inter
-        group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto`}
+        group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
+        ${isRightAligned ? '-left-36' : 'left-0'}`}
       >
-        <div className="flex gap-[40px]">
+        <div className="flex gap-10">
           <div>
             <ul className="flex flex-col gap-1 text-[#f9f9f9] text-[16px] font-medium leading-[28px] text-nowrap">
               {[
