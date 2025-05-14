@@ -1,7 +1,7 @@
 export default function Issues() {
   return (
     <div className="min-h-screen bg-[#18183B] text-white flex justify-center items-center flex-col py-16 px-4 text-start font-sans">
-        <div className="max-w-[570px] mx-auto py-[100px] text-white space-y-10">
+      <div className="max-w-[570px] mx-auto py-[100px] text-white space-y-10">
         <section>
           <h2 className="text-xl  text-white font-mono mb-4">What’s the problem?</h2>
           <p className="text-base font-inter leading-relaxed text-[#D4D4D8]">
@@ -18,7 +18,7 @@ export default function Issues() {
         <section>
           <h2 className="text-xl font-mono text-white mb-4">What we’re doing</h2>
           <p className="text-base font-inter leading-relaxed text-[#D4D4D8]">
-            Pause is changing the way consent is enforced online. We are designing the infrastructure that makes consent enforceable, enforceability affordable, and at scale.
+            Prune is changing the way consent is enforced online. We are designing the infrastructure that makes consent enforceable, enforceability affordable, and at scale.
           </p>
           <p className="text-base  font-inter  leading-relaxed text-[#D4D4D8] mt-4">
             First, we identify how harmful content is being more widely shared: through ad networks, content pipelines, affiliate schemes, and hosting infrastructure. Then we map the networks involved. If they’ll act, we escalate and partner with civil society.
