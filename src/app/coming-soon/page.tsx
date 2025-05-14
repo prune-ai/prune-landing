@@ -42,7 +42,7 @@ const RotatingTextPage = () => {
   }, []);
 
   return (
-    <section className="bg-[#18183B] py-10 relative z-10 w-full h-full">
+    <section className="bg-[#18183B] md:py-10 relative z-10 w-full h-full">
       <div className="max-w-[1314px] h-full mx-auto ">
         <div className="relative w-full min-h-screen md:h-[650px]  lg:h-[820px] bg-cover bg-center rounded-lg flex items-center justify-center">
           <Image
@@ -57,7 +57,7 @@ const RotatingTextPage = () => {
             <h2 className="text-[1rem] md:text-[1.1rem]  lg:text-[1.5rem] uppercase font-semibold">Coming soon</h2>
             <p 
               ref={textRef}
-              className="lg:max-w-[600px] md:max-w-[400px] max-w-[240px] font-mono text-white text-center font-[400] italic text-[20px] md:text-[32px] lg:text-[40px]"
+              className="lg:max-w-[600px] md:max-w-[400px] max-w-[280px] font-mono text-white text-center font-[400] italic text-[22px] md:text-[32px] lg:text-[40px]"
             >
               {rotatingTexts[currentIndex]}
             </p>
