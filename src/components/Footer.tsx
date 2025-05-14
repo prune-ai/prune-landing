@@ -74,7 +74,7 @@ export const Footer = () => {
               <p className="text-[#ECF2ED] text-base ml-1.5 font-inter leading-[22px]">
                 <span className="block mb-4">
                   From the shadows of the internet, we bring clarity,
-                  control, and consent. Prune is building tools to take
+                  and consent. Prune is building tools to take
                   harmful content down for good.
                 </span>
                 <span className="font-mono italic">
@@ -84,8 +84,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Tools section */} 
-          
+          {/* Tools section */}
+
           <FooterColumn title="Tools" links={toolLinks} />
           <FooterColumn title="Who we serve" links={audienceLinks} />
 
@@ -96,8 +96,8 @@ export const Footer = () => {
             </h3>
             <div className="flex flex-wrap items-center gap-4 w-full">
               {socialIcons.map((icon, index) => (
-                <Link 
-                  key={index} 
+                <Link
+                  key={index}
                   href={icon.href}
                   className="transform hover:scale-110 transition-transform duration-300"
                 >
