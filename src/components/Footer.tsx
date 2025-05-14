@@ -73,7 +73,7 @@ export const Footer = () => {
 
               <p className="text-[#ECF2ED] text-base ml-1.5 font-inter leading-[22px]">
                 <span className="block mb-4">
-                  From the shadows of the internet, we bring clarity,
+                  From the shadows of the internet, we bring clarity
                   and consent. Prune is building tools to take
                   harmful content down for good.
                 </span>
