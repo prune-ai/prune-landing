@@ -70,7 +70,7 @@ export const Footer = () => {
                 />
               </Link>
 
-              <p className="text-[#ECF2ED] text-[16px] ml-1.5 font-inter leading-[22px]">
+              <p className="text-[#ECF2ED] w-[311px] md:w-full text-[16px] ml-1.5 font-inter leading-[22px]">
                 <span className="block text-wrap mb-4">
                   From the shadows of the internet, we bring clarity and
                   consent. Prune is building tools to take harmful content down

@@ -43,14 +43,14 @@ const RotatingTextPage = () => {
 
   return (
     <section className="bg-[#18183B] py-10 relative z-10 w-full h-full">
-      <div className="max-w-[1314px] h-full mx-auto py-16">
-        <div className="relative w-full min-h-[360px] md:h-[650px]  lg:h-[820px] bg-cover bg-center rounded-lg flex items-center justify-center">
+      <div className="max-w-[1314px] h-full mx-auto ">
+        <div className="relative w-full min-h-screen md:h-[650px]  lg:h-[820px] bg-cover bg-center rounded-lg flex items-center justify-center">
           <Image
             src="/Rectangle12.png"
             alt="Rectangle 12"
             width={1312}
             height={1312}
-            className="w-[335px] h-[335px] md:w-[650px] md:h-[650px]  mx-auto lg:w-[780px] lg:h-[780px] object-cover absolute top-0 rounded-lg"
+            className="w-[335px] h-[335px] md:w-[650px] md:h-[650px]  mx-auto lg:w-[780px] lg:h-[780px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg"
             priority
           />
           <div className="text-white relative z-20 flex flex-col gap-4 md:gap-6 lg:gap-10 items-center">
@@ -67,7 +67,7 @@ const RotatingTextPage = () => {
               className="relative z-10 transform transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]"
             >
               <div className="relative group/button">
-                <div className="relative flex justify-center items-center md:px-6 px-4 md:text-lg text-[16px] font-medium font-inter text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
+                <div className="relative flex justify-center items-center md:px-6 px-4 text-[12px] md:text-[16px]  font-medium font-anvier text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-10 md:h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
                   Contact Us
                   <div
                     aria-hidden="true"
