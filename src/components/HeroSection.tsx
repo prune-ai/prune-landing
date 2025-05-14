@@ -80,7 +80,7 @@ export default function HeroSection() {
                     AI-powered takedowns
                 </h1>
                 <div ref={subheadRef}>
-                    <h1 className="mt-4 text-4xl w-full lg:text-6xl text-center text-white font-mono">
+                    <h1 className="mt-4 text-3xl md:text-4xl w-full lg:text-6xl text-center text-white font-mono">
                         We weaponize LLMs against 
                     </h1>
                     <h1 className="text-3xl md:text-4xl w-full lg:text-6xl text-center text-white font-mono">
