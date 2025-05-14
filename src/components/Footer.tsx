@@ -2,11 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 export const Footer = () => {
-
-
   const toolLinks = [
     { title: "PruneGPT", href: "/coming-soon" },
     { title: "BonsAI", href: "/coming-soon" },
@@ -31,7 +27,6 @@ export const Footer = () => {
     { src: "/icons-2.svg", alt: "Icons", href: "#" },
     { src: "/icons-3.svg", alt: "Icons", href: "#" },
     { src: "/icons-4.svg", alt: "Icons", href: "#" },
-
   ];
 
   return (
@@ -43,7 +38,11 @@ export const Footer = () => {
             Let&apos;s Prune the internet together.
           </h1>
 
-          <a href="mailto:contact@prune.co" target="_blank" className="relative z-10 transform transition-transform duration-300  hover:scale-[1.02] active:scale-[0.98]">
+          <a
+            href="mailto:contact@prune.co"
+            target="_blank"
+            className="relative z-10 transform transition-transform duration-300  hover:scale-[1.02] active:scale-[0.98]"
+          >
             <div className="relative group/button">
               <div className="relative flex items-center px-[24px] w-full  text-[16px] font-main text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
                 Request Demo
@@ -73,8 +72,9 @@ export const Footer = () => {
 
               <p className="text-[#ECF2ED] text-[16px] ml-1.5 font-inter leading-[22px]">
                 <span className="block text-wrap mb-4">
-                  From the shadows of the internet, we bring clarity and consent. Prune is building tools to take
-                  harmful content down for good.
+                  From the shadows of the internet, we bring clarity and
+                  consent. Prune is building tools to take harmful content down
+                  for good.
                 </span>
                 <span className="font-mono italic">
                   Fighting bad guys with good code since 2023.
@@ -83,8 +83,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Tools section */} 
-          
+          {/* Tools section */}
+
           <FooterColumn title="Tools" links={toolLinks} />
           <FooterColumn title="Who we serve" links={audienceLinks} />
 
@@ -95,8 +95,8 @@ export const Footer = () => {
             </h3>
             <div className="flex flex-wrap items-center gap-4 w-full">
               {socialIcons.map((icon, index) => (
-                <Link 
-                  key={index} 
+                <Link
+                  key={index}
                   href={icon.href}
                   className="transform hover:scale-110 transition-transform duration-300"
                 >
@@ -130,7 +130,7 @@ export const Footer = () => {
 
 interface FooterColumnProps {
   title: string;
-  links: Array<{ title: string; href: string; }>;
+  links: Array<{ title: string; href: string }>;
 }
 
 const FooterColumn = ({ title, links }: FooterColumnProps) => (
