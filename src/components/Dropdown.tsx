@@ -72,11 +72,10 @@ export default function Dropdown({ item }: DropdownProps) {
                 "For policymakers",
                 "For NGOs",
                 "For legal professionals",
-                "For legal professionals", // maybe duplicate?
                 "For DMCA enforcers",
                 "For trust and safety",
               ].map((text, idx) => (
-                <a key={idx} href="/coming-soon">
+                <a className=" hover:font-semibold duration-100 ease-in" key={idx} href="/coming-soon">
                   <li>{text}</li>
                 </a>
               ))}
