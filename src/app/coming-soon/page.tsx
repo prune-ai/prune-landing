@@ -43,7 +43,7 @@ const RotatingTextPage = () => {
 
   return (
     <section className="bg-[#18183B] md:py-10 relative z-10 w-full h-full">
-      <div className="max-w-[1314px] h-full mx-auto ">
+      <div className="max-w-[1314px] mt-4 h-full mx-auto ">
         <div className="relative w-full min-h-screen md:h-[650px]  lg:h-[820px] bg-cover bg-center rounded-lg flex items-center justify-center">
           <Image
             src="/Rectangle12.png"

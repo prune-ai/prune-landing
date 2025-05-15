@@ -36,6 +36,9 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  font-size: 87.5%; /* This = 14px */
+}
 
 @keyframes shimmer {
   0% {
