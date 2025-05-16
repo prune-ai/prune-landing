@@ -75,7 +75,11 @@ export default function Dropdown({ item }: DropdownProps) {
                 "For DMCA enforcers",
                 "For trust and safety",
               ].map((text, idx) => (
-                <a className=" hover:font-semibold duration-100 ease-in" key={idx} href="/coming-soon">
+                <a 
+                  className="font-medium hover-underline-animation text-[#f9f9f9] transition-colors duration-100 ease-in" 
+                  key={idx} 
+                  href="/coming-soon"
+                >
                   <li>{text}</li>
                 </a>
               ))}
