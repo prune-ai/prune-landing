@@ -84,14 +84,38 @@ export default function HeroSection() {
                     muted
                     preload="true"
                     className="w-full h-screen object-cover hidden lg:flex"
+                    poster="./images/backgroundfinal.png"
+                    onError={(e) => {
+                        e.currentTarget.src = "";
+                        e.currentTarget.load();
+                    }}
                 />
-                <Image
-                    src="/images/mobilefinal.png"
+                    {/* <video
+                    src="/background hero.mp4"
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                    preload="true"
+                    poster="./images/mobilefinal.png"
+                    className="w-full h-screen object-cover flex lg:hidden"
+                />
+                 */}
+                <video
+                    src="/background hero.mp4"
                     width={500}
                     height={500}
-                    alt="prune"
-                    className="w-full h-screen lg:hidden"
-                    loading="lazy"
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                    preload="true"
+                    poster="./images/mobilefinal.png"
+                    className="w-full h-screen object-cover lg:hidden"
+                    onError={(e) => {
+                        e.currentTarget.src = "";
+                        e.currentTarget.load();
+                    }}
                 />
             </div>
 
