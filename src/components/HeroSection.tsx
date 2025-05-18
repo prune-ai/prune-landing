@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,17 +11,17 @@ export default function HeroSection() {
     const subheadRef = useRef<HTMLDivElement>(null);
     const pinRef = useRef<HTMLDivElement>(null);
     const gradientRef = useRef<HTMLDivElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [videoReady, setVideoReady] = useState(false);
 
     useEffect(() => {
-        // Animate text in
         gsap.set([headlineRef.current, subheadRef.current], {
             opacity: 0,
-            y: 20
+            y: 20,
         });
 
-        // Initially hide the gradient
         gsap.set(gradientRef.current, {
-            opacity: 0
+            opacity: 0,
         });
 
         const tl = gsap.timeline();
@@ -30,15 +30,18 @@ export default function HeroSection() {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out"
-        }).to(subheadRef.current, {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out"
-        }, "-=0.4");
+            ease: "power2.out",
+        }).to(
+            subheadRef.current,
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+            },
+            "-=0.4"
+        );
 
-        // Pin the hero section
         ScrollTrigger.create({
             trigger: pinRef.current,
             start: "top top",
@@ -46,86 +49,75 @@ export default function HeroSection() {
             pinSpacing: true,
             anticipatePin: 1,
             endTrigger: "html",
-            end: "bottom top"
+            end: "bottom top",
         });
 
-        // Animate gradient on scroll - this should start after some scroll
         ScrollTrigger.create({
             trigger: document.body,
             start: "top top",
-            end: "+=100vh", // End after 100vh of scrolling
+            end: "+=100vh",
             onUpdate: (self) => {
-                // Start showing gradient after 20% scroll progress
                 const progress = Math.max(0, (self.progress - 0.2) / 0.8);
                 gsap.set(gradientRef.current, {
-                    opacity: Math.min(1, progress) // Ensure opacity never exceeds 1
+                    opacity: Math.min(1, progress),
                 });
-            }
+            },
         });
 
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
 
+    const handleVideoCanPlay = () => {
+        setVideoReady(true);
+    };
+
     return (
         <div className="relative w-screen h-screen lg:h-[1039px] overflow-hidden">
-            <div 
+            {/* Gradient Overlay */}
+            <div
                 ref={gradientRef}
-                className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(24,24,57,0.5)] to-[#181839] z-10 pointer-events-none" 
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(24,24,57,0.5)] to-[#181839] z-20 pointer-events-none"
             />
 
-            <div ref={pinRef}>
-                <video
-                    src="/background hero.mp4"
-                    autoPlay
-                    loop
-                    playsInline
-                    muted
-                    preload="true"
-                    className="w-full h-screen object-cover hidden lg:flex"
-                    poster="./images/backgroundfinal.png"
-                    onError={(e) => {
-                        e.currentTarget.src = "";
-                        e.currentTarget.load();
-                    }}
+            <div ref={pinRef} className="relative w-full h-full">
+                {/* ✅ Mobile fallback image ONLY for mobile */}
+                <Image
+                    src="/images/mobilefinal.png"
+                    alt="Mobile Poster"
+                    fill
+                    priority
+                    className={`object-cover z-0 block lg:hidden transition-opacity duration-500 ${
+                        videoReady ? "opacity-0" : "opacity-100"
+                    }`}
                 />
-                    {/* <video
-                    src="/background hero.mp4"
-                    autoPlay
-                    loop
-                    playsInline
-                    muted
-                    preload="true"
-                    poster="./images/mobilefinal.png"
-                    className="w-full h-screen object-cover flex lg:hidden"
-                />
-                 */}
+
+                {/* 🎥 Video over everything */}
                 <video
+                    ref={videoRef}
                     src="/background hero.mp4"
-                    width={500}
-                    height={500}
                     autoPlay
                     loop
-                    playsInline
                     muted
-                    preload="true"
-                    poster="./images/mobilefinal.png"
-                    className="w-full h-screen object-cover lg:hidden"
-                    onError={(e) => {
-                        e.currentTarget.src = "";
-                        e.currentTarget.load();
-                    }}
+                    playsInline
+                    preload="auto"
+                    onCanPlayThrough={handleVideoCanPlay}
+                    className="absolute top-0 left-0 w-full h-full object-cover z-10"
                 />
             </div>
 
-            <div className="absolute w-full text-center top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                <h1 ref={headlineRef} className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
+            {/* Hero Text */}
+            <div className="absolute w-full text-center top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+                <h1
+                    ref={headlineRef}
+                    className="text-2xl md:text-4xl lg:text-5xl font-bold text-white"
+                >
                     AI-powered takedowns
                 </h1>
                 <div ref={subheadRef}>
                     <h1 className="mt-4 text-3xl md:text-4xl w-full lg:text-6xl text-center text-white font-mono">
-                        We weaponize LLMs against 
+                        We weaponize LLMs against
                     </h1>
                     <h1 className="text-3xl md:text-4xl w-full lg:text-6xl text-center text-white font-mono">
                         digital exploitation
