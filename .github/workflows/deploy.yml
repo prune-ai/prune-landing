@@ -20,7 +20,7 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build & export static site
+      - name: Build static site
         run: npm run export
 
       - name: Configure AWS credentials (OIDC)
