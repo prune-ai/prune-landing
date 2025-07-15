@@ -14,27 +14,32 @@ export interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     title: "Issue",
-    route: "https://phoenixpitchdeck.webflow.io/",
+    route: "/issue",
   },
   {
     title: "Tools",
     children: [
       {
         title: "PruneGPT",
-        route: "/",
+        route: "/coming-soon",
       },
       {
         title: "MommyLongLegs",
-        route: "/",
+        route: "/coming-soon ",
       },
       {
         title: "Leechi",
-        route: "/",
+        route: "/coming-soon",
       },
       {
         title: "BonsAI",
-        route: "/",
+        route: "/coming-soon",
       },
+      {
+        title: "Trellis",
+        route: "/coming-soon",
+      },
+      
     ],
   },
   {
@@ -83,24 +88,24 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScrolled]);
 
-  // Animation for menu items on load
-  useEffect(() => {
-    const elements = menuItemsRef.current.filter((el) => el !== null);
-    gsap.fromTo(
-      elements,
-      {
-        y: -20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "power3.out",
-      }
-    );
-  }, []);
+  // // Animation for menu items on load
+  // useEffect(() => {
+  //   const elements = menuItemsRef.current.filter((el) => el !== null);
+  //   gsap.fromTo(
+  //     elements,
+  //     {
+  //       y: -20,
+  //       opacity: 0,
+  //     },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 0.5,
+  //       stagger: 0.1,
+  //       ease: "power3.out",
+  //     }
+  //   );
+  // }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -149,7 +154,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex gap-7 items-center text-lg font-main text-white">
+      <div className="hidden lg:flex gap-7 items-center text-[16px] font-inter font-medium text-white">
         {menuItems.map((item, index) => {
           const isActive =
             typeof window !== "undefined" &&
@@ -169,13 +174,13 @@ export default function Header() {
               ref={(el) => {
                 menuItemsRef.current[index] = el;
               }}
-              className={`relative px-8 py-1.5 transition-all duration-200 ease-in-out
+              className={`relative px-8 py-1.5 transition-all duration-500 ease-in-out
             ${isActive ? "text-white" : "text-white hover:text-white"}
             group`}
               href={item?.route || ""}
             >
               {item.title}
-              <div className="absolute inset-0 rounded-lg bg-[#1B1A3C] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
+              <div className="absolute inset-0 rounded-lg bg-[#2D2968] opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 -z-10"></div>
             </Link>
           );
         })}
@@ -183,13 +188,13 @@ export default function Header() {
 
       {/* Desktop CTA */}
       <div className="hidden lg:flex gap-6">
-        <a href="mailto:contact@prune.co" target="_blank" className="relative z-10">
+        <a href="mailto:contact@prune.co" target="_blank" className="relative z-10 transform transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]">
           <div className="relative group/button">
-            <div className="relative flex items-center px-6 text-lg font-main text-white group-hover:bg-[#41889c] transition-colors duration-300 rounded-lg h-12 bg-[#357889]">
+            <div className="relative flex items-center px-6 text-[16px] font-inter font-semibold text-white group-hover:bg-[#41889c] transition-all duration-300 rounded-lg h-12 bg-[#357889] shadow-md hover:shadow-lg active:shadow-sm">
               Request Demo
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 opacity-0 group-hover/button:opacity-100 transition-opacity duration-500 rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.1),65%,transparent)]"
+                className="pointer-events-none absolute inset-0 opacity-0 group-hover/button:opacity-100 transition-all duration-500 rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.1),65%,transparent)] animate-shimmer"
               ></div>
             </div>
           </div>

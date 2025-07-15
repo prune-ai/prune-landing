@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import {Inter} from "next/font/google"
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,6 +14,14 @@ const avenir = localFont({
 const times = localFont({
   src: "../../public/fonts/times-new-roman-italic.ttf",
   variable: "--font-mono",
+});
+
+const interfont = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  weight: ["200", "400", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -137,7 +146,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${avenir.variable} ${times.variable} antialiased overflow-x-clip`}
+        className={`${interfont.variable} ${avenir.variable} ${times.variable} antialiased overflow-x-clip`}
       >
         <Header />
         <main role="main">{children}</main>

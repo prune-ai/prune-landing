@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import HeroSection from "@/components/HeroSection";
 import PruneImage from "@/components/PrueImage";
 import PruneInfo from "@/components/PruneInfo";
+import Cta from "@/components/Cta";
 
 export default function Home() {
   useEffect(() => {
@@ -26,11 +27,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="  overflow-x-hidden">
       
       <HeroSection />
       <PruneInfo />
       <PruneImage />
+      <Cta />
      
     </main>
   );
