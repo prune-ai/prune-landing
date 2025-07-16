@@ -12,8 +12,8 @@ export default function PruneImage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h1 className="font-mono">Automating The Takedown</h1>
-                    <h1 className="font-mono">Lifecycle with Prune</h1>
+                    <h1 className="font-mono">Making the Law Enforceable</h1>
+                    <h1 className="font-mono">Online with Prune</h1>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

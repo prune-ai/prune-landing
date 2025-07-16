@@ -4,13 +4,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 
 const rotatingTexts: string[] = [
-  "If you or your client are in need of takedown services, please reach out!",
-  "Litigation is one of the great American art forms, and we are teaching AI to do it",
-  "DMCA is our love language",
-  "We don't send thoughts and prayers. We send takedowns.",
-  "We're not building a unicorn. We're building your pre-litigation package.",
-  "TurboTax for getting your images offline",
-  "Revenge is a dish best served via Prune"
+  "Weaponizing frontier AI against the proliferation of illegal content online"
 ];
 
 const RotatingTextPage = () => {

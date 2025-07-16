@@ -19,7 +19,7 @@ const PruneInfo = () => {
         >
           <h1 className="text-3xl md:text-4xl text-white font-mono italic mb-8">What is Prune?</h1>
           <p className="text-[16px] font-inter   lg:text-[20px] text-white font-medium leading-relaxed">
-            Prune uses large language models to detect, classify, and remove non-consensual and illegal content from the internet. We automate every stage of the takedown lifecycle—from discovery to documentation to takedown request delivery—at scale.
+          <span className="font-bold">Prune maps the infrastructure that enables and monetizes illegal content online.</span> We support law enforcement, litigators, and platforms with digital forensics and compliance tools.
           </p>
         </motion.div>
 

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Prune",
   },
   description:
-    "AI-powered takedowns for the worst corners of the Internet.",
+    "AI-powered enforcement for the worst corners of the Internet.",
   keywords: [
     "takedown automation",
     "brand protection",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Prune",
     title: "Prune | Weaponizing LLMs Against Digital Exploitation",
     description:
-      "AI-powered takedowns for the worst corners of the Internet.",
+      "AI-powered enforcement for the worst corners of the Internet.",
     images: [
       {
         url: "https://prune.co/images/background.png",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prune | Weaponizing LLMs Against Digital Exploitation",
     description:
-      "AI-powered takedowns for the worst corners of the Internet.",
+      "AI-powered enforcement for the worst corners of the Internet.",
     images: ["https://prune.co/images/background.png"],
     creator: "@prune",
   },
@@ -115,7 +115,7 @@ export default function RootLayout({
         />
         <meta
           property="og:description"
-          content="AI-powered takedowns for the worst corners of the Internet."
+          content="AI-powered enforcement for the worst corners of the Internet."
         />
         <meta
           property="og:image"
@@ -132,7 +132,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:description"
-          content="AI-powered takedowns for the worst corners of the Internet."
+          content="AI-powered enforcement for the worst corners of the Internet."
         />
         <meta
           name="twitter:image"

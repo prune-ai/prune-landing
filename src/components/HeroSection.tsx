@@ -113,7 +113,7 @@ export default function HeroSection() {
                     ref={headlineRef}
                     className="text-2xl md:text-4xl lg:text-5xl font-bold text-white"
                 >
-                    AI-powered takedowns
+                    AI-powered enforcement
                 </h1>
                 <div ref={subheadRef}>
                     <h1 className="mt-4 text-3xl md:text-4xl w-full lg:text-6xl text-center text-white font-mono">
