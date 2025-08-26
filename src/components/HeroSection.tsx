@@ -96,7 +96,7 @@ export default function HeroSection() {
                 {/* 🎥 Video over everything */}
                 <video
                     ref={videoRef}
-                    src="/background hero.webm"
+                    src="/background hero 200.mp4"
                     autoPlay
                     loop
                     muted
@@ -105,7 +105,7 @@ export default function HeroSection() {
                     onCanPlayThrough={handleVideoCanPlay}
                     className="absolute top-0 left-0 w-full h-full object-cover z-10"
                 />
-            </div>
+             </div>
 
             {/* Hero Text */}
             <div className="absolute w-full text-center top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
