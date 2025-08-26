@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 import gsap from 'gsap';
+import Image from 'next/image';
 
 const rotatingTexts: string[] = [
   "Weaponizing frontier AI against the proliferation of illegal content online"
@@ -39,14 +39,17 @@ const RotatingTextPage = () => {
     <section className="bg-[#18183B] md:py-10 relative z-10 w-full h-full">
       <div className="max-w-[1314px] lg:mt-4 h-full mx-auto ">
         <div className="relative w-full min-h-screen md:h-[650px]  lg:h-[820px] bg-cover bg-center rounded-lg flex items-center justify-center">
-          <Image
-            src="/Rectangle12.png"
-            alt="Rectangle 12"
-            width={1312}
-            height={1312}
-            className="w-[335px] h-[335px] md:w-[650px] md:h-[650px]  mx-auto lg:w-[780px] lg:h-[780px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg"
-            priority
-          />
+          <picture>
+            <source srcSet="/Rectangle12-q50.webp" type="image/webp" />
+            <Image
+              src="/Rectangle12.png"
+              alt="Rectangle 12"
+              width={1312}
+              height={1312}
+              className="w-[335px] h-[335px] md:w-[650px] md:h-[650px]  mx-auto lg:w-[780px] lg:h-[780px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg"
+              priority
+            />
+          </picture>
           <div className="text-white relative z-20 flex flex-col gap-4 md:gap-6 lg:gap-10 items-center">
             <h2 className="text-[1rem] md:text-[1.1rem]  lg:text-[1.5rem] uppercase font-semibold">Coming soon</h2>
             <p 
