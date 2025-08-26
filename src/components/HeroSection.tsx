@@ -96,7 +96,7 @@ export default function HeroSection() {
                 {/* 🎥 Video over everything */}
                 <video
                     ref={videoRef}
-                    src="/background hero 200.mp4"
+                    src="/background hero.mp4"
                     autoPlay
                     loop
                     muted
