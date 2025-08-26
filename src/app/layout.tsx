@@ -39,7 +39,6 @@ export const metadata: Metadata = {
     "AI takedowns",
     "online brand protection",
     "content removal",
-    "DMCA automation",
   ],
   authors: [{ name: "Prune" }],
   creator: "Prune",

@@ -72,7 +72,6 @@ export default function Dropdown({ item }: DropdownProps) {
                 "For policymakers",
                 "For NGOs",
                 "For legal professionals",
-                "For DMCA enforcers",
                 "For trust and safety",
               ].map((text, idx) => (
                 <a 

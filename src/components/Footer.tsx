@@ -17,7 +17,6 @@ export const Footer = () => {
     { title: "For policymakers", href: "/coming-soon" },
     { title: "For NGOs", href: "/coming-soon" },
     { title: "For legal professionals", href: "/coming-soon" },
-    { title: "For DMCA enforcers", href: "/coming-soon" },
     { title: "For trust and safety teams", href: "/coming-soon" },
   ];
 
