@@ -4,20 +4,20 @@ import Link from "next/link";
 
 export const Footer = () => {
   const toolLinks = [
-    { title: "PruneGPT", href: "/coming-soon" },
-    { title: "BonsAI", href: "/coming-soon" },
-    { title: "MommyLongLegs", href: "/coming-soon" },
-    { title: "Leechi", href: "/coming-soon" },
-    { title: "Trellis", href: "/coming-soon" },
+    { title: "AI Content Moderation (PruneGPT)", href: "/coming-soon" },
+    { title: "Digital Forensics Platform (BonsAI)", href: "/coming-soon" },
+    { title: "Takedown Automation (MommyLongLegs)", href: "/coming-soon" },
+    { title: "Content Enforcement Tools (Leechi)", href: "/coming-soon" },
+    { title: "Infrastructure Mapping (Trellis)", href: "/coming-soon" },
   ];
 
   const audienceLinks = [
-    { title: "For survivors", href: "/coming-soon" },
-    { title: "For law enforcement", href: "/coming-soon" },
-    { title: "For policymakers", href: "/coming-soon" },
-    { title: "For NGOs", href: "/coming-soon" },
-    { title: "For prosecutors", href: "/coming-soon" },
-    { title: "For trust and safety teams", href: "/coming-soon" },
+    { title: "CSAM Removal for Survivors", href: "/coming-soon" },
+    { title: "Digital Enforcement for Law Enforcement", href: "/coming-soon" },
+    { title: "Policy Tools for Policymakers", href: "/coming-soon" },
+    { title: "Content Moderation for NGOs", href: "/coming-soon" },
+    { title: "Legal Technology for Prosecutors", href: "/coming-soon" },
+    { title: "AI Safety for Trust & Safety Teams", href: "/coming-soon" },
   ];
 
   const socialIcons = [

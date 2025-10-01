@@ -1,0 +1,20 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Allow specific paths for better crawling
+Allow: /team
+Allow: /issue
+Allow: /coming-soon
+
+# Block admin/private areas (if any exist in the future)
+Disallow: /admin
+Disallow: /api/_admin
+Disallow: /_next/
+Disallow: /.well-known/
+
+# Sitemap
+Sitemap: https://prune.co/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

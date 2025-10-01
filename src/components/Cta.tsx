@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Cta: React.FC = () => {
   return (
@@ -17,7 +18,9 @@ const Cta: React.FC = () => {
             priority
           />
           <div className="max-w-[183px] md:max-w-[350px] lg:max-w-[520px] font-mono text-white text-center z-50 font-[400] italic text-[20px] md:text-[32px] lg:text-[40px]">
-            Weaponizing frontier AI against the proliferation of illegal content online
+            <Link href="/issue" className="hover:text-teal-300 transition-colors">
+              Weaponizing frontier AI against the proliferation of illegal content online
+            </Link>
           </div>
         </div>
       </div>
