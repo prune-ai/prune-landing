@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://prune.co</loc>
+<lastmod>2025-10-02T17:44:38.223Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://prune.co/team</loc>
+<lastmod>2025-10-02T17:44:38.223Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://prune.co/issue</loc>
+<lastmod>2025-10-02T17:44:38.223Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://prune.co/coming-soon</loc>
+<lastmod>2025-10-02T17:44:38.223Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+</urlset>
