@@ -1,9 +1,12 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "prune-dot-co"
 compatibility_date = "2025-08-25"
+account_id = "0153067155e2f7c164844eb7a61ab885"
 
 [build]
-command = "npm run export" # your script already runs `next build` with output: "export"
+command = "npm run export"
 
 [assets]
 directory = "./out"
+
+pages_build_output_dir = "./out"
