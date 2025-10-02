@@ -27,27 +27,49 @@ const interfont = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://prune.co"),
   title: {
-    default: "Prune | Weaponizing LLMs Against Digital Exploitation",
+    default: "Prune | Using Frontier AI to Enforce the Law Online",
     template: "%s | Prune",
   },
   description:
     "AI-powered enforcement for the worst corners of the Internet.",
   keywords: [
+    // Core enforcement terms
     "takedown automation",
-    "brand protection",
-    "intellectual property",
     "AI takedowns",
-    "online brand protection",
     "content removal",
     "DMCA automation",
     "digital enforcement",
-    "AI content moderation",
-    "illegal content removal",
-    "shadow infrastructure",
     "CSAM removal",
-    "content enforcement platform",
     "automated takedowns",
     "LLM enforcement",
+    // Victim-focused terms (CSAM, NCII, etc.)
+    "NCII takedown",
+    "IBSA removal", 
+    "Image Based Sexual Abuse",
+    "NCM enforcement",
+    "Sextortion response",
+    "nonconsensual images removal",
+    "revenge porn takedown service",
+    "deepfake removal online",
+    // Search behavior keywords
+    "remove deepfake online",
+    "how to report CSAM website",
+    "lawyer for nonconsensual images",
+    "stop harassment content online",
+    "image removal from Google search",
+    "child exploitation content reporting tool",
+    "compliance tool for online platforms",
+    "nudes leaked removal",
+    "deepfake removal",
+    "remove my pictures from site",
+    "stop revenge porn",
+    // Professional/legal terms
+    "CSAM litigation support tools",
+    "revenge porn lawyer tech",
+    "ICAC task force tools",
+    "cybercrime enforcement",
+    "online safety compliance",
+    "platform content moderation"
   ],
   authors: [{ name: "Prune" }],
   creator: "Prune",
@@ -62,7 +84,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://prune.co",
     siteName: "Prune",
-    title: "Prune | Weaponizing LLMs Against Digital Exploitation",
+    title: "Prune | Using Frontier AI to Enforce the Law Online",
     description:
       "AI-powered enforcement for the worst corners of the Internet.",
     images: [
@@ -76,7 +98,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prune | Weaponizing LLMs Against Digital Exploitation",
+    title: "Prune | Using Frontier AI to Enforce the Law Online",
     description:
       "AI-powered enforcement for the worst corners of the Internet.",
     images: ["https://prune.co/images/background.png"],
@@ -109,7 +131,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Prune | Weaponizing LLMs Against Digital Exploitation</title>
+        <title>Prune | Using Frontier AI to Enforce the Law Online</title>
         <meta name="theme-color" content="#18183B" />
         <meta
           name="viewport"
@@ -119,7 +141,7 @@ export default function RootLayout({
         {/* OG tags */}
         <meta
           property="og:title"
-          content="Prune | Weaponizing LLMs Against Digital Exploitation"
+          content="Prune | Using Frontier AI to Enforce the Law Online"
         />
         <meta
           property="og:description"
@@ -136,7 +158,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Prune | Weaponizing LLMs Against Digital Exploitation"
+          content="Prune | Using Frontier AI to Enforce the Law Online"
         />
         <meta
           name="twitter:description"
@@ -186,15 +208,26 @@ export default function RootLayout({
                     "Digital exploitation",
                     "Content takedown automation",
                     "CSAM removal",
+                    "NCII takedown",
+                    "IBSA removal",
+                    "Image Based Sexual Abuse",
+                    "NCM enforcement", 
+                    "Sextortion response",
                     "Shadow infrastructure mapping",
-                    "Digital forensics"
+                    "Digital forensics",
+                    "Revenge porn takedown",
+                    "Deepfake removal",
+                    "Nonconsensual images removal",
+                    "Legal technology for prosecutors",
+                    "ICAC task force support",
+                    "Platform compliance tools"
                   ]
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://prune.co/#website",
                   "url": "https://prune.co",
-                  "name": "Prune | Weaponizing LLMs Against Digital Exploitation",
+                  "name": "Prune | Using Frontier AI to Enforce the Law Online",
                   "description": "AI-powered enforcement for the worst corners of the Internet.",
                   "publisher": {
                     "@id": "https://prune.co/#organization"

@@ -12,12 +12,12 @@ export const Footer = () => {
   ];
 
   const audienceLinks = [
-    { title: "CSAM Removal for Survivors", href: "/coming-soon" },
-    { title: "Digital Enforcement for Law Enforcement", href: "/coming-soon" },
-    { title: "Policy Tools for Policymakers", href: "/coming-soon" },
-    { title: "Content Moderation for NGOs", href: "/coming-soon" },
-    { title: "Legal Technology for Prosecutors", href: "/coming-soon" },
-    { title: "AI Safety for Trust & Safety Teams", href: "/coming-soon" },
+    { title: "CSAM Removal & Support for Survivors", href: "/coming-soon" },
+    { title: "NCII Takedown for Law Enforcement", href: "/coming-soon" },
+    { title: "IBSA Policy Tools for Policymakers", href: "/coming-soon" },
+    { title: "Sextortion Response for NGOs", href: "/coming-soon" },
+    { title: "Revenge Porn Legal Tech for Prosecutors", href: "/coming-soon" },
+    { title: "Deepfake Detection for Trust & Safety", href: "/coming-soon" },
   ];
 
   const socialIcons = [
